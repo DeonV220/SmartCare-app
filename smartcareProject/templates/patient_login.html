@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Patient Login</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <a href="{% url 'patient_dashboard' %}">Login</a>
+</form>
+
+
+
+
+<p>Don't have an account? <a href="{% url 'patient_signup' %}">Sign up here</a></p>
+{% endblock %}

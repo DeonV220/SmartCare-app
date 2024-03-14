@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Admin Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <a href="/admin/">Go to Admin</a>
+    </form>
+{% endblock %}
+
+{#<a  href="{% url 'patient_dashboard' %}">Login</a> // change the button to this #}

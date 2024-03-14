@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Select Your User Role</h2>
+<div class="role-buttons">
+    <button class="role-button" onclick="selectRole('staff')">Staff</button>
+    <button class="role-button" onclick="selectRole('patient')">Patient</button>
+    <button class="role-button" onclick="selectRole('admin')">Admin</button>
+</div>
+
+<script>
+    function selectRole(role) {
+        // Redirect to the corresponding login page // new code
+        var url;
+
+        if (role == 'staff'){
+            url = "{% url 'staff_login' %}";
+        } else if (role == 'patient'){
+            url = "{% url 'patient_dashboard' %}";
+        } else if (role == 'admin'){
+            url = "{% url 'admin_login' %}"
+        }
+
+        window,location.href =url;
+    }   
+</script>
+
+
+<!-- window.location.href = `/login/${role}/`; -->
+
+{% endblock %}
