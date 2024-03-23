@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Patient Dashboard{% endblock %}
+
+{% block content %}
+    <!-- <h1>Welcome to the Patient Dashboard</h1> -->
+    <br>
+    <div style="background-color: #e6e6fa; font-family: Arial, sans-serif;">
+        <h1 style="color: #6a5acd; text-align: center;">Patient Dashboard</h1>
+        <p style="text-align: center;">Welcome to your dashboard. View your upcoming appointments and medical records.</p>
+    </div>
+    <div class="patient-info-container">
+        <ul><h3>Patient Information</h3></ul>
+        <ul>
+            <li><strong>Current Appointment:</strong>
+            <li><strong>Time:</strong>
+            <li><strong>Date:</strong>
+            <li><strong>Location:</strong>
+            <li><strong>Doctor:</strong>
+        </ul>
+    </div>
+    <div class="button-container">
+        <button>Book Appointment</button>
+        <button>Reorder Prescription</button>
+    </div>
+    
+    <div class="print-invoice-button">
+        <button>Get Invoice</button>
+    </div>
+    
+{% endblock %}

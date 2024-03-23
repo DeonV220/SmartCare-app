@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<style>
+    .hero-section {
+        /* background-image: url('https://via.placeholder.com/1500x600'); */
+        background-image: url('{% static "img/h.jpg" %}');
+        background-size: cover;
+        background-position: center;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #000000;
+        /* color: #fff; */
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+
+    .hero-section p {
+        font-size: 18px;
+        max-width: 600px;
+        margin: 0 auto 30px;
+    }
+</style>
+<br>
+<div class="hero-section">
+    <div class="container">
+        <h1>Welcome to My Website</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non lectus id mi accumsan dignissim.
+            Vivamus quis leo quis nulla volutpat condimentum vel eget nisi.</p>
+        {% if user.is_authenticated %}
+            <p>User Role: {{ user.role }}</p>
+        {% else %}
+            <p>Please <a href="{% url 'login' %}" class="btn btn-primary">login</a> or <a href="{% url 'patient_signup' %}" class="btn btn-success">sign up</a> to access more features.</p>
+        {% endif %}
+    </div>
+</div>
+
+<!-- <div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">About Us</h5>
+                    <p class="card-text">Learn more about our company and services.</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Services</h5>
+                    <p class="card-text">Explore the services we offer.</p>
+                    <a href="#" class="btn btn-primary">View Services</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Contact Us</h5>
+                    <p class="card-text">Get in touch with us for any inquiries or support.</p>
+                    <a href="#" class="btn btn-primary">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+{% endblock %}
